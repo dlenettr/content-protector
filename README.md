@@ -74,7 +74,9 @@ All parameters :
 
 
 Add this rules any stylesheet in your template ( style.css / engine.css / ... )
-```._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
+```
+._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
 ._cp input { background: #338FF6; border: 0; border-radius: 3px; padding: 4px 8px; margin: 10px 5px; color: #fff; }
 ._cp input:hover { background: #1040A9; cursor: pointer; }
-._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }```
+._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }
+```
