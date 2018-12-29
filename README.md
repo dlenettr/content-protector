@@ -1,5 +1,6 @@
 # Content Protector
-<img src="https://img.shields.io/badge/dle-11.3-007dad.svg"> <img src="https://img.shields.io/badge/lang-tr-ff0000.svg"> <img src="https://img.shields.io/badge/lang-en-000099.svg">
+<img src="https://img.shields.io/badge/dle-11.3-007dad.svg">
+<img src="https://img.shields.io/badge/lang-tr,en-orange.svg">
 
 İçeriklerinizin botlar tarafından çekilmesini engelleyin
 
