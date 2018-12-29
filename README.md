@@ -31,7 +31,6 @@ Full story de belirli bir kısmı korumak için aşağıdaki kodu yazını içer
 [/protect]
 `
 
-
 Makalenin tamamında koruma yapmak için ilave alan sistemini kullanabilirsiniz. Böylece yazı içine kod girmek yerine ilave alan yardımıyla parametreleri girebilirsiniz.
 İlave alan ile yapılacak koruma için gerekli alanlar :
 
@@ -58,9 +57,11 @@ All parameters :
 
 * To protect partial of full story text. You can use this codes in your full story text
 
-`[protect type="rc" group="5" expire="30m" id="xyz"]
+`
+[protect type="rc" group="5" expire="30m" id="xyz"]
 	Protected text of article
-[/protect]`
+[/protect]
+`
 
 * To protect all of full story, you can use xfield system. Required fields :
    lock   : (list) : Yes,No  [ Not optional ]
@@ -73,7 +74,7 @@ All parameters :
 
 
 Add this rules any stylesheet in your template ( style.css / engine.css / ... )
-`._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
+```._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
 ._cp input { background: #338FF6; border: 0; border-radius: 3px; padding: 4px 8px; margin: 10px 5px; color: #fff; }
 ._cp input:hover { background: #1040A9; cursor: pointer; }
-._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }`
+._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }```
