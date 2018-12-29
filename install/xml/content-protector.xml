@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Content Protector</id>
+	<version>1.0</version>
+	<vqmver>2.4.1</vqmver>
+	<author>MaRZoCHi</author>
+	<file name="engine/modules/main.php">
+		<operation>
+			<ignoreif><![CDATA[require_once ENGINE_DIR . "/modules/content.protector.php";]]></ignoreif>
+			<search position="before"><![CDATA[echo $tpl->result['main'];]]></search>
+			<add><![CDATA[
+// Content Protector - start
+require_once ENGINE_DIR . "/modules/content.protector.php";
+$tpl->result['main'] = preg_replace_callback( "#\\[protect(.+?)\\](.+?)\\[/protect\\]#is", "content_control", $tpl->result['main'] );
+// Content Protector - end
+]]></add>
+		</operation>
+	</file>
+	<file name="engine/modules/show.full.php">
+		<operation>
+			<ignoreif><![CDATA["[protect]]></ignoreif>
+			<search position="before"><![CDATA[$tpl->set( '{full-story}', $row['full_story'] );]]></search>
+			<add><![CDATA[
+// Content Protector - start
+		$xfs = xfieldsdataload( $row['xfields'] );
+		if ( array_key_exists( 'lock', $xfs ) && strtolower( $xfs['lock'] ) == "yes" ) {
+			$exp = ( array_key_exists( 'expire', $xfs ) ) ? trim( $xfs['expire'] ) : "1hour";
+			$gr = ( array_key_exists( 'group', $xfs ) ) ? trim( $xfs['group'] ) : "5";
+			$typ = ( array_key_exists( 'type', $xfs ) ) ? trim( $xfs['type'] ) : "rc";
+			$row['full_story'] = "[protect type='{$typ}' group='{$gr}' id='news{$row['id']}' expire='{$exp}']" . $row['full_story'] . "[/protect]";
+		}
+// Content Protector - end
+]]></add>
+		</operation>
+	</file>
+</modification>
