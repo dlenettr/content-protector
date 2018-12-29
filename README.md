@@ -15,7 +15,7 @@ Sistem cookie yerine session kullanıldığı için dışarıdan yapılacak giri
 
 Genel kod yapısı :
 
-```[protect ... ] xxxx [/protect]```
+`[protect ... ] xxxx [/protect]`
 
 Tüm parametreler :
     type : (rc|c) ReCaptcha, Captcha koruma tipleri. ( Sadece rc geçerli değer )
@@ -25,9 +25,11 @@ Tüm parametreler :
 
 Full story de belirli bir kısmı korumak için aşağıdaki kodu yazını içerisinde kullanabilirsiniz
 
-```[protect type="rc" group="5" expire="30m" id="xyz"]
+`
+[protect type="rc" group="5" expire="30m" id="xyz"]
 	Makaledeki korumalı yazı
-[/protect]```
+[/protect]
+`
 
 
 Makalenin tamamında koruma yapmak için ilave alan sistemini kullanabilirsiniz. Böylece yazı içine kod girmek yerine ilave alan yardımıyla parametreleri girebilirsiniz.
@@ -46,7 +48,7 @@ Bazı alanlar opsiyoneldir. Çünkü bu alanlar için "varsayılan" değerler be
 
 Upload all files than run the install_module.php file and delete.
 
-```[protect ... ] xxxx [/protect]```
+`[protect ... ] xxxx [/protect]`
 
 All parameters :
   type    : (rc|c) ReCaptcha, Captcha protection types.
@@ -56,9 +58,9 @@ All parameters :
 
 * To protect partial of full story text. You can use this codes in your full story text
 
-```[protect type="rc" group="5" expire="30m" id="xyz"]
+`[protect type="rc" group="5" expire="30m" id="xyz"]
 	Protected text of article
-[/protect]```
+[/protect]`
 
 * To protect all of full story, you can use xfield system. Required fields :
    lock   : (list) : Yes,No  [ Not optional ]
@@ -71,7 +73,7 @@ All parameters :
 
 
 Add this rules any stylesheet in your template ( style.css / engine.css / ... )
-```._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
+`._cp { border: 1px solid #999; border-radius: 5px; padding: 10px; background: #D1DCE1; color: #333; }
 ._cp input { background: #338FF6; border: 0; border-radius: 3px; padding: 4px 8px; margin: 10px 5px; color: #fff; }
 ._cp input:hover { background: #1040A9; cursor: pointer; }
-._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }```
+._cp_open { background: #fcfcfc; padding: 5px; border: 1px solid #ccc; }`
